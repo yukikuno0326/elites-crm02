@@ -14,7 +14,9 @@ class CommentsController < ApplicationController
         if @comment.save
             redirect_to customer_path(@comment.customer_id)
         else
-            redirect_to customer_path(@comment.customer_id)
+            flash[:alert] = @comment.errors.full_messages
+            render template: "customers/show"
+            @comments = @customer.comments
         end
     end
     
