@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   
   before_action :authenticate_user!
-  before_action :set_customers, only: [:edit, :update, :show, :destroy]
+  before_action :set_customer, only: [:edit, :update, :show, :destroy]
   
   def index
     @q = Customer.search(params[:q])
@@ -44,7 +44,7 @@ class CustomersController < ApplicationController
   
   private
   
-  def set_customers
+  def set_customer
     @customer = Customer.find(params[:id])
   end
   
