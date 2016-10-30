@@ -28,7 +28,7 @@
       <div class = "form-group">
         <%= f.label :password, "パスワード" %>
         <% if @minimum_password_length %>
-        <em>(<% @minimum_password_length %> 文字以上が必要です)</em>
+        <em>(<%= @minimum_password_length %> 文字以上が必要です)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       </div>
